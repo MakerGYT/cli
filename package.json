@@ -1,0 +1,60 @@
+{
+  "name": "name",
+  "version": "0.1.0",
+  "main": "index.js",
+  "bin": "bin/bin.js",
+  "description": "description",
+  "repository": {
+    "type": "git",
+    "url": "url"
+  },
+  "keywords": [],
+  "homepage": "homepage",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^4.19.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.14.0",
+    "stylelint": "^9.3.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0",
+    "stylelint-config-prettier": "^3.3.0",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "scripts": {
+    "precommit": "npm run lint-staged",
+    "prettier": "prettier --write \"./**/*.{js,jsx,css,less,md,json}\"",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix",
+    "stylelint": "stylelint \"./**/*.{css,less}\"",
+    "stylelint:fix": "stylelint \"./**/*.{css,less}\" --fix",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{css,less}": [
+      "stylelint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {}
+}
